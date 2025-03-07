@@ -1,0 +1,165 @@
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .main-section {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .hero-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #e0e7ff;
+    padding: 20px;
+  }
+  
+  .logo-title {
+    font-size: 2.5rem;
+    margin: 10px 0;
+  }
+  
+  .tagline {
+    font-size: 1.2rem;
+    margin: 20px 0;
+  }
+  
+  .register-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .app-mockup {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .mockup-device {
+    width: 100%;
+    max-width: 600px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .app-interface {
+    background-color: white;
+    padding: 20px;
+  }
+  
+  .app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .app-logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .app-logo img {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+  }
+  
+  .app-nav span {
+    margin: 0 10px;
+    cursor: pointer;
+  }
+  
+  .app-nav .active {
+    font-weight: bold;
+  }
+  
+  .app-content {
+    text-align: center;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .notes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  
+  .note-card {
+    background-color: #f3f4f6;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .note-title {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  .note-icon {
+    font-size: 1.5rem;
+  }
+  
+  .add-button {
+    margin-top: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  
+  .footer {
+    background-color: #5B7185;
+    color: white;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .footer-logo {
+    width: 50px;
+    height: auto;
+  }
+  
+  .opacity-75 {
+    opacity: 0.75;
+  }
+  
+  .hover\:opacity-100:hover {
+    opacity: 1;
+  }
+  
+  .text-sm {
+    font-size: 0.875rem;
+  }
+  
+  .ml-4 {
+    margin-left: 1rem;
+  }
+  
+  .space-x-4 > :not(:last-child) {
+    margin-right: 1rem;
+  }
+  
+  .space-x-3 > :not(:last-child) {
+    margin-right: 0.75rem;
+  }

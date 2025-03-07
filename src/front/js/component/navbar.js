@@ -1,19 +1,32 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Thememode } from "./Thememode"
+import logo from "../../img/logo-sin-fondo.jpg"
 
 export const Navbar = () => {
 	return (
-		<nav className="navbar navbar-light bg-light">
-			<div className="container">
-				<Link to="/">
-					<span className="navbar-brand mb-0 h1">React Boilerplate</span>
-				</Link>
-				<div className="ml-auto">
-					<Link to="/demo">
-						<button className="btn btn-primary">Check the Context in action</button>
+		<nav className="navbar navbar-light bg-light p-0">
+			<div className="container-fluid margintop">
+			<Link to="/">
+                    <img
+                        src={logo}
+                        className="navbar-brand backnavbar	"
+                        style={{ width: "3rem" }}
+                    />
+                </Link>
+				<div className="ml-">
+					<Link to="/login">
+						<button className=" w-100 me-5 backbutton border border rounded text-black p-1">Login</button>
 					</Link>
+					<div className="m-">
+					<Link to="/landingpage">
+						<button className=" w-50 me-5 backbutton border border rounded text-black p-1">landingpage</button>
+					</Link>
+					</div>
 				</div>
 			</div>
+			<Thememode/>
 		</nav>
 	);
 };
+

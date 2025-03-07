@@ -1,0 +1,29 @@
+h1{
+    color: #78A0AF;
+}
+
+div.btn-group{
+    background-color: #ffffff;
+    border-radius: 40% 40% 40% 40%;
+
+}
+
+.btn-primary { /* Cambia el color cuando está seleccionado */
+    background-color: #78A0AF !important;
+    border-color: #78A0AF !important;
+}
+
+.btn-outline-primary { /* Borde azul cuando NO está seleccionado ese !important es para sobreescribir los valores de bootstrap*/
+    background-color: #ffffff !important;
+    border-color: #78A0AF !important;
+    color: #78A0AF !important;
+}
+
+button{
+    border-color: #78A0AF;
+    background-color: #78A0AF;
+    border-radius: 50% 50% 50% 50%;
+    color:#ffffff;
+    padding: 2% 1% 2% 1%;
+    
+}
