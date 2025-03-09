@@ -10,10 +10,12 @@ import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/Navbar.jsx";
 import { Footer } from "./component/Footer.jsx";
-import { Contact } from "./pages/Contact.jsx";
 import { AddContact } from "./pages/AddContact.jsx";
 import { EditContact } from "./pages/EditContact.jsx";
 import { CardsItems } from "./pages/CardsItems.jsx";
+import { Contact } from "./pages/Contact.jsx";
+import {ItemDetails} from"./pages/ItemDetails.jsx"
+
 //create your first component
 const Layout = () => {
     //the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -36,6 +38,7 @@ const Layout = () => {
                         <Route element={<Contact />} path="/contact" />
                         <Route element={<EditContact />} path="/editcontact" />
                         <Route element={<AddContact />} path="/addcontact" />
+                        <Route element={<ItemDetails />} path="/Item-details" />
                         <Route element={<Single />} path="/single/:theid" />
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
