@@ -19,7 +19,7 @@ export const CardsItems = () => {
             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-5">
                 {store[store.activePage].map((item) => (
                     <div key={item.uid} className="col">
-                        <div className="card h-100 shadow-sm bg-dark">
+                        <div className="card h-100 shadow-sm bg-dark text-white">
                             <img className="card-img-top img-fluid" alt={item.name}
                                 onError={(e) => { e.target.src = "https://raw.githubusercontent.com/tbone849/star-wars-guide/refs/heads/master/build/assets/img/big-placeholder.jpg" }}
                                 src={`https://raw.githubusercontent.com/tbone849/star-wars-guide/refs/heads/master/build/assets/img/${store.activePage === 'people' ? 'characters' : store.activePage}/${item.uid}.jpg`} />
