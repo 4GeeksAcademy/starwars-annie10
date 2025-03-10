@@ -25,18 +25,18 @@ export const Navbar = () => {
 					</button>
 					<button
 						onClick={() => { actions.setActivePage("planets"); navigate("/planets"); }}
-						className="btn btn-primary"
+						className="btn btn-outline-secondary"
 					>
 						Planets
 					</button>
 					<button
 						onClick={() => { actions.setActivePage("starships"); navigate("/starships"); }}
-						className="btn btn-primary"
+						className="btn btn-outline-secondary"
 					>
 						Starships
 					</button>
 					<Link to="/contact">
-						<button className="btn btn-primary">Contact</button>
+						<button className="btn btn-outline-secondary">Contact</button>
 					</Link>
 					<div className="btn-group">
 					<button type="button" className="btn btn-outline-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">favorites
@@ -46,7 +46,7 @@ export const Navbar = () => {
 						{store.favorites.map((favoriteItem)=>
 						<li style={{display: "flex", justifyContent:"space-between", alignItems:"center"}}> 
 						<span className="dropdown-item">{favoriteItem}</span>
-						<span onClick={()=>actions.setFavorite(favoriteItem)}>"icono"</span>
+						<span onClick={()=>actions.setFavorite(favoriteItem)}><i className="fa-solid fa-heart-crack"></i></span>
 						</li>)}
 					</ul>
 					</div>
