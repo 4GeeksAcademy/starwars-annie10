@@ -1,12 +1,6 @@
 from flask import Flask, request, jsonify, url_for, Blueprint
 from api.utils import generate_sitemap, APIException
 from flask_cors import CORS
-<<<<<<< HEAD
-from api.models import db, Users, Products
-from flask_jwt_extended import create_access_token
-from flask_jwt_extended import jwt_required
-from flask_jwt_extended import get_jwt_identity
-=======
 from api.models import db, Users, Products,Planets,PlanetFavorite,Characters,CharacterFavorite
 from flask_jwt_extended import create_access_token
 import requests
@@ -14,7 +8,7 @@ from flask_jwt_extended import create_access_token
 from flask_jwt_extended import jwt_required
 from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import get_jwt
->>>>>>> develop
+
 
 
 api = Blueprint('api', __name__)
@@ -27,7 +21,6 @@ def handle_hello():
     response_body['message'] = "Hello! I'm a message that came from the backend"
     return response_body, 200
 
-<<<<<<< HEAD
 
 @api.route('/users', methods=['GET'])
 def users():
@@ -74,7 +67,6 @@ def protected():
     response_body = {}
     current_user = get_jwt_identity()
     response_body['message'] = f'User logged: {current_user}'
-=======
 @api.route('/edit-profile', methods=['PUT'])
 @jwt_required()
 def edit_profile():
@@ -107,13 +99,11 @@ def get_users():
     results = [row.serialize() for row in rows]
     response_body['results'] = results
     response_body['message'] = 'Listado de usuarios'
->>>>>>> develop
     return response_body, 200
 
 
 @api.route("/login", methods=["POST"])
 def login():
-<<<<<<< HEAD
     response_body = {}
     data = request.json
     username = request.json.get("username", None)
@@ -165,7 +155,6 @@ def product(id):
         response_body['results'] = {}
         return response_body, 200
     
-=======
 
     response_body = {}
     data = request.json
@@ -385,4 +374,3 @@ def delete_favorite_character(user_id, character_id):
 
     response_body['message'] = f'Personaje favorito con id {character_id} eliminado del usuario con id {user_id}'
     return response_body, 200
->>>>>>> develop
