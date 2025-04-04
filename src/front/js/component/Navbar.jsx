@@ -39,16 +39,16 @@ export const Navbar = () => {
 						<button className="btn btn-outline-secondary">Contact</button>
 					</Link>
 					<div className="btn-group">
-					<button type="button" className="btn btn-outline-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">favorites
-					<span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{store.favorites.length}</span>
-					</button>	
-					<ul className="dropdown-menu">
-						{store.favorites.map((favoriteItem)=>
-						<li style={{display: "flex", justifyContent:"space-between", alignItems:"center"}}> 
-						<span className="dropdown-item">{favoriteItem}</span>
-						<span onClick={()=>actions.setFavorite(favoriteItem)}><i className="fa-solid fa-heart-crack"></i></span>
-						</li>)}
-					</ul>
+						<button type="button" className="btn btn-outline-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">favorites
+							<span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{store.favorites.length}</span>
+						</button>
+						<ul className="dropdown-menu">
+							{store.favorites.map((favoriteItem) =>
+								<li style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+									<span className="dropdown-item">{favoriteItem}</span>
+									<span onClick={() => actions.setFavorite(favoriteItem)}><i className="fa-solid fa-heart-crack"></i></span>
+								</li>)}
+						</ul>
 					</div>
 				</div>
 			</div>
