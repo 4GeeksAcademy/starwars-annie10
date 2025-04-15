@@ -1,12 +1,12 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import ScrollToTop from "./component/ScrollToTop.jsx";
+import  ScrollToTop from "./component/ScrollToTop.jsx";
 import { BackendURL } from "./component/BackendURL.jsx";
 
 import { Home } from "./pages/Home.jsx";
 import { Demo } from "./pages/Demo.jsx";
 import { Single } from "./pages/Single.jsx";
-import injectContext from "./store/appContext";
+import  injectContext  from "./store/appContext";
 
 import { Navbar } from "./component/Navbar.jsx";
 import { Footer } from "./component/Footer.jsx";
@@ -15,6 +15,8 @@ import { EditContact } from "./pages/EditContact.jsx";
 import { CardsItems } from "./pages/CardsItems.jsx";
 import { Contact } from "./pages/Contact.jsx";
 import {ItemDetails} from"./pages/ItemDetails.jsx"
+import { Login } from "./pages/Login.jsx";
+
 
 //create your first component
 const Layout = () => {
@@ -39,6 +41,7 @@ const Layout = () => {
                         <Route element={<EditContact />} path="/editcontact" />
                         <Route element={<AddContact />} path="/addcontact" />
                         <Route element={<ItemDetails />} path="/Item-details" />
+                        <Route element={<Login/>} path="/login"/>
                         <Route element={<Single />} path="/single/:theid" />
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
