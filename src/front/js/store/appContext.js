@@ -27,8 +27,12 @@ const injectContext = PassedComponent => {
 			 * This function is the equivalent to "window.onLoad", it only runs once on the entire application lifetime
 			 * you should do your ajax requests or fetch api requests here. Do not use setState() to save data in the
 			 * store, instead use actions, like this:
-			 **/
-			state.actions.getMessage(); // <---- calling this function from the flux.js actions
+			**/
+			state.actions.getContacts();
+			state.actions.getStarwarsData("planets");
+			state.actions.getStarwarsData("people");
+			state.actions.getStarwarsData("starships");
+			//state.actions.getMessage(); // <---- calling this function from the flux.js actions
 		}, []);
 
 		// The initial value for the context is not null anymore, but the current state of this component,
