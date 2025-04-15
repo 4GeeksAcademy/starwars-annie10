@@ -39,6 +39,55 @@ def users():
     return response_body, 200
 
 
+@api.route("/login", methods=["POST"])
+def login():
+    response_body = {}
+    data = request.json
+    email = request.json.get("email", None)
+    password = data.get("password", None)
+    row = db.session.execute(db.select(Users).where(Users.email == email, Users.password == password, Users.is_active)).scalar()
+    if not row:
+        response_body['message'] = "Bad username or password"
+        return response_body, 401
+    user = row.serialize()
+    claims = {'user_id': user['id'],
+              'is_admin': user['is_admin']}
+    print(claims)
+    access_token = create_access_token(identity=email, additional_claims=claims)
+    response_body['message'] = 'User Logged!'
+    response_body['access_token'] = access_token
+    response_body['results'] = user
+    return response_body, 200
+@api.route("/register", methods=["POST"])
+def register():
+    response_body = {}
+    data = request.json
+    row = Users(email=data["email"],
+                    password=data['password'],
+                    is_active=data.get('is_active', True),
+                    is_admin=data.get('is_admin', False),
+                    first_name=data.get('first_name', ''),
+                    last_name=data.get('last_name', ''),)
+    db.session.add(row)
+    db.session.commit()
+    user = row.serialize()
+    claims = {'user_id': user['id'],
+              'is_admin': user['is_admin']}
+    print(claims)
+    access_token = create_access_token(identity=user['email'], additional_claims=claims)
+    response_body['message'] = 'User Register!'
+    response_body['results'] = user
+    response_body['access_token'] = access_token
+    return response_body, 200
+@api.route("/protected", methods=["GET"])
+@jwt_required()
+def protected():
+    response_body = {}
+    current_user = get_jwt_identity()
+    response_body['message'] = f'User logged {current_user}'
+    return response_body, 200
+
+
 @api.route('/products', methods=['GET', 'POST'])
 def products():
     response_body = {}

@@ -1,9 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-<<<<<<< HEAD
-=======
 
->>>>>>> develop
 
 db = SQLAlchemy()
 
@@ -61,11 +58,7 @@ class Bills(db.Model):
 
 
 class BillItems(db.Model):
-<<<<<<< HEAD
-    _tablename_ = 'bill_items'
-=======
     __tablename__ = 'bill_items'
->>>>>>> develop
     id = db.Column(db.Integer, primary_key=True)
     price_per_unit = db.Column(db.Float, nullable=False)
     quantity = db.Column(db.Integer, nullable=False)
@@ -89,40 +82,13 @@ class Followers(db.Model):
 
 
 class Post(db.Model):
-<<<<<<< HEAD
-    tablename = 'post'
-=======
     __tablename__ = 'post'
->>>>>>> develop
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String())
     description = db.Column(db.String())
     body = db.Column(db.String())
     date = db.Column(db.DateTime)
     image_url = db.Column(db.String())
-<<<<<<< HEAD
-    user_id = db.Column(db.Integer)
-
-
-class Medias(db.Model):
-    tablename = 'medias'
-    id = db.Column(db.Integer, primary_key=True)
-    type = db.Column(db.Enum('Instagram', 'Facebook', 'x', name='type'))
-    url = db.Column(db.String())
-    post_id = db.Column(db.Integer)
-
-
-class Comments(db.Model):
-    tablename = 'comments'
-    id = db.Column(db.Integer, primary_key=True)
-    body = db.Column(db.String())
-    user_id = db.Column(db.Integer)
-    post_id = db.Column(db.Integer)
-
-
-class Characters(db.Model):
-    tablename = 'characters'
-=======
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     user_to = db.relationship('Users', foreign_keys=[user_id], backref=db.backref('user_to'), lazy='select')
 
@@ -147,7 +113,6 @@ class Comments(db.Model):
 
 class Characters(db.Model):
     __tablename__ = 'characters'
->>>>>>> develop
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String())
     height = db.Column(db.String())
@@ -160,16 +125,6 @@ class Characters(db.Model):
 
 
 class CharacterFavorite(db.Model):
-<<<<<<< HEAD
-    table = 'character_favorite'
-    id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer)
-    character_id = db.Column(db.Integer)
-
-
-class Planets(db.Model):
-    table = 'planets'
-=======
     __tablename__ = 'character_favorite'
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
@@ -179,7 +134,6 @@ class Planets(db.Model):
 
 class Planets(db.Model):
     __tablename__ = 'planets'
->>>>>>> develop
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String())
     diameter = db.Column(db.String())
@@ -192,12 +146,6 @@ class Planets(db.Model):
 
 
 class PlanetFavorite(db.Model):
-<<<<<<< HEAD
-    table = 'planet_favorite'
-    id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer)
-    planet_id = db.Column(db.Integer)
-=======
     __tablename__ = 'planet_favorite'
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
@@ -210,4 +158,3 @@ class PlanetFavorite(db.Model):
                 'user_id': self.user_id,
                 'planet_id': self.planet_id}
 
->>>>>>> develop
